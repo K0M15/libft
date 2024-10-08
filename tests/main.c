@@ -6,6 +6,8 @@ void	check_isalnum();
 void	check_isascii();
 void	check_isprint();
 
+void	check_toupper();
+
 int main()
 {
 	check_isalpha();
@@ -13,4 +15,6 @@ int main()
 	check_isalnum();
 	check_isascii();
 	check_isprint();
+
+	check_toupper();
 }

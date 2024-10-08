@@ -7,13 +7,13 @@ typedef struct {
 	char *set;
 } t_charset;
 
-t_charset letters_lower = { 26,"abcdefghijklmnopqrstuvwxyz" };
-t_charset letters_upper =  { 26,"ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
-t_charset digits = { 10, "1234567890" };
-t_charset special_chars = { 9, "?/!\".,' _" };
-t_charset non_printable = {4, "\t\r\n\f"};
+static t_charset letters_lower = { 26,"abcdefghijklmnopqrstuvwxyz" };
+static t_charset letters_upper =  { 26,"ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
+static t_charset digits = { 10, "1234567890" };
+static t_charset special_chars = { 9, "?/!\".,' _" };
+static t_charset non_printable = {4, "\t\r\n\f"};
 
-void iter_charset(t_charset chset, int *expect, int (*f)(int))
+static void iter_charset(t_charset chset, int *expect, int (*f)(int))
 {
 	int buffres;
 	for(int i = 0; i < chset.length; ++i)
@@ -32,7 +32,7 @@ void	check_isalpha()
 	int ex_digits[] = {0,0,0,0,0,0,0,0,0,0};
 	int ex_special[] = {0,0,0,0,0,0,0,0};
 	int ex_nonprint[4] = { 0 };
-	printf("Check isalpha\n");
+	printf("\nCheck isalpha\n");
 	printf("Check letter_lower\n");
 	iter_charset(letters_lower, ex_lower, isalpha);
 	printf("Check letter_upper\n");
@@ -55,7 +55,7 @@ void	check_isdigit()
 	int ex_digits[10] = { 1,1,1,1,1,1,1,1,1,1 };
 	int ex_special[9] = { 0 };
 	int ex_nonprint[4] = { 0 };
-	printf("Check isdigit\n");
+	printf("\nCheck isdigit\n");
 	printf("Check letter_lower\n");
 	iter_charset(letters_lower, ex_lower, isdigit);
 	printf("Check letter_upper\n");
@@ -78,7 +78,7 @@ void	check_isalnum()
 	int ex_digits[10] = {1,1,1,1,1,1,1,1,1,1};
 	int ex_special[9] = { 0 };
 	int ex_nonprint[4] = { 0 };
-	printf("Check isalnum\n");
+	printf("\nCheck isalnum\n");
 	printf("Check letter_lower\n");
 	iter_charset(letters_lower, ex_lower, isalnum);
 	printf("Check letter_upper\n");
@@ -101,7 +101,7 @@ void	check_isascii()
 	int ex_digits[10] = {1,1,1,1,1,1,1,1,1,1};
 	int ex_special[9] = {1,1,1,1,1,1,1,1,1};
 	int ex_nonprint[4] = {1,1,1,1};
-	printf("Check isascii\n");
+	printf("\nCheck isascii\n");
 	printf("Check letter_lower\n");
 	iter_charset(letters_lower, ex_lower, isascii);
 	printf("Check letter_upper\n");
@@ -124,7 +124,7 @@ void	check_isprint()
 	int ex_digits[10] = {1,1,1,1,1,1,1,1,1,1};
 	int ex_special[9] = {1,1,1,1,1,1,1,1,1};
 	int ex_nonprint[4] = {0};
-	printf("Check isprint\n");
+	printf("\nCheck isprint\n");
 	printf("Check letter_lower\n");
 	iter_charset(letters_lower, ex_lower, isprint);
 	printf("Check letter_upper\n");
