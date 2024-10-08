@@ -1,74 +1,82 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_crtl.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/08 16:22:08 by afelger           #+#    #+#             */
+/*   Updated: 2024/10/08 17:38:10 by afelger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int	strlen(char *c)
+unsigned long	strlen(const char *c)
 {
-	int		counter;
+	unsigned long	counter;
 
 	counter = 0;
 	while (c[counter])
 		counter++;
-	return counter;
+	return (counter);
 }
 
-char	*strchr(char *s, char *c)
+char	*strchr(const char *s, int c)
 {
-	char			result;
-	unsigned int	counter;
+	unsigned long	counter;
 
-	result = NULL;
 	counter = 0;
-	while(s[counter])
+	while (s[counter])
 	{
-		if (c == s[counter])
-			result = &s[counter];
+		if ((char) c == s[counter])
+			return ((char *)&s[counter]);
 		counter++;
 	}
-	return result;
+	return (0);
 }
 
-char	*strrchr(char *s, char *c)
+char	*strrchr(const char *s, int c)
 {
-	char	result;
-	int		counter;
+	unsigned long	counter;
 
-	result = NULL;
 	counter = strlen(s);
-	while(counter >= 0)
+	while (counter >= 0)
 	{
 		if (c == s[counter])
-			result = &s[counter];
+			return ((char *)&s[counter]);
 		counter--;
 	}
-	return result;
+	return (0);
 }
 
-int	strncmp(const char *s1, const char *s2, unsigned int n)
+unsigned long	strncmp(const char *s1, const char *s2, unsigned long n)
 {
-	unsigned int	counter;
+	unsigned long	counter;
 
 	counter = 0;
-	while(counter < n && s1[counter]-s2[counter] == 0 && s1[counter])
+	while (counter < n && s1[counter] - s2[counter] == 0 && s1[counter])
 		counter++;
-	return (unsigned char) s1[counter] - (unsigned char) s2[counter];
+	return ((unsigned char) s1[counter] - (unsigned char) s2[counter]);
 }
 
 char	*strnstr(const char *haystack, const char *needle)
 {
-	unsigned int	c_haystack;
-	unsigned int	c_needle;
-	int				needle_length;
-	
+	unsigned long	c_haystack;
+	unsigned long	c_needle;
+	unsigned long	needle_length;
+
 	needle_length = strlen(needle);
 	c_haystack = 0;
-	while(haystack[c_haystack])
+	while (haystack[c_haystack])
 	{
 		c_needle = 0;
-		while(needle[c_needle] && haystack[c_haystack + c_needle] == needle[c_needle])
+		while (needle[c_needle]
+			&& haystack[c_haystack + c_needle] == needle[c_needle])
 			c_needle++;
-		if(c_needle == needle_length)
-			return &haystack[c_haystack];
+		if (c_needle == needle_length)
+			return ((char *)&haystack[c_haystack]);
 		c_haystack++;
 	}
-	return NULL;
+	return (0);
 }
-
