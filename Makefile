@@ -9,12 +9,13 @@ DEPS=libft.h
 all: $(NAME)
 
 clean:
+	rm -f ft_check_char.o ft_convert_char.o ft_mem_crtl.o ft_str_change.o ft_str_crtl.o
+	rm -f ft_list.o ft_list_crtl.o ft_list_apply.o
 
-fclean:
+fclean: clean
+	rm -f libft.a
 
-re:
-	fclean
-	all
+re: fclean all
 
 
 ft_check_char.o: ft_check_char.c
@@ -48,7 +49,7 @@ objects_bonus: ft_list.o ft_list_crtl.o ft_list_apply.o
 bonus: objects objects_bonus
 	ar -crs libft.a ft_list.o ft_list_crtl.o ft_list_apply.o
 
-$(NAME): objects libft.a
+$(NAME): objects
 	ar -crs libft.a ft_check_char.o ft_convert_char.o ft_mem_crtl.o ft_str_change.o ft_str_crtl.o
 
 norm:
