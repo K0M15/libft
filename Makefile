@@ -1,5 +1,21 @@
 .PHONY: all clean fclean re objects objects_bonus bonus norm
 NAME=ftlib
+FILES= ft_atoi.c \
+ft_bzero.c \
+ft_calloc.c \
+ft_check_char.c \
+ft_convert_char.c \
+ft_itoa.c \
+ft_mem_crtl.c \
+ft_put_fd.c \
+ft_split.c \
+ft_str_change.c \
+ft_str_crtl.c \
+ft_str_new.c \
+ft_striteri.c \
+ft_strmapi.c \
+ft_strtrim.c
+
 CFLAGS=-Wall -Wextra -Werror -fno-builtin
 BONUS_FLAG=-DFLAG_BONUS
 CC=cc
