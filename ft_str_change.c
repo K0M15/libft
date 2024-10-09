@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned long	strlcpy(char *dst, const char *src, unsigned long dsize)
+unsigned long	ft_strlcpy(char *dst, const char *src, unsigned long dsize)
 {
 	unsigned long	counter;
 
@@ -25,7 +25,7 @@ unsigned long	strlcpy(char *dst, const char *src, unsigned long dsize)
 	return (dsize);
 }
 
-unsigned long	strlcat(char *dst, const char *src, unsigned long dsize)
+unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dsize)
 {
 	unsigned long	src_ctr;
 	unsigned long	dst_ctr;

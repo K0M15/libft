@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*memchr(const void *s, int c, unsigned long n)
+void	*ft_memchr(const void *s, int c, unsigned long n)
 {
 	unsigned int	counter;
 
@@ -22,12 +22,12 @@ void	*memchr(const void *s, int c, unsigned long n)
 	return ((void *)&s[counter]);
 }
 
-int	memcmp(const void *s1, const void *s2, unsigned long n)
+int	ft_memcmp(const void *s1, const void *s2, unsigned long n)
 {
 	return (strncmp((const char *)s1, (const char *)s2, n));
 }
 
-void	*memset(void *s, int c, unsigned long n)
+void	*ft_memset(void *s, int c, unsigned long n)
 {
 	while (--n + 1)
 	{
@@ -36,7 +36,7 @@ void	*memset(void *s, int c, unsigned long n)
 	return (s);
 }
 
-void	*memcpy(void *dest, const void *src, unsigned long n)
+void	*ft_memcpy(void *dest, const void *src, unsigned long n)
 {
 	unsigned int	counter;
 
@@ -49,7 +49,7 @@ void	*memcpy(void *dest, const void *src, unsigned long n)
 	return (dest);
 }
 
-void	*memmove(void *dest, const void *src, unsigned long n)
+void	*ft_memmove(void *dest, const void *src, unsigned long n)
 {
 	while (--n + 1)
 	{

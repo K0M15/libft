@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-int	toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a')
 		return (c - ' ');
 	return (c);
 }
 
-int	tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c <= 'Z')
 		return (c + ' ');

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned long	strlen(const char *c)
+unsigned long	ft_strlen(const char *c)
 {
 	unsigned long	counter;
 
@@ -22,7 +22,7 @@ unsigned long	strlen(const char *c)
 	return (counter);
 }
 
-char	*strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	unsigned long	counter;
 
@@ -36,7 +36,7 @@ char	*strchr(const char *s, int c)
 	return (0);
 }
 
-char	*strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	unsigned long	counter;
 
@@ -50,7 +50,7 @@ char	*strrchr(const char *s, int c)
 	return (0);
 }
 
-unsigned long	strncmp(const char *s1, const char *s2, unsigned long n)
+unsigned long	ft_strncmp(const char *s1, const char *s2, unsigned long n)
 {
 	unsigned long	counter;
 
@@ -60,7 +60,7 @@ unsigned long	strncmp(const char *s1, const char *s2, unsigned long n)
 	return ((unsigned char) s1[counter] - (unsigned char) s2[counter]);
 }
 
-char	*strnstr(const char *haystack, const char *needle)
+char	*ft_strnstr(const char *haystack, const char *needle)
 {
 	unsigned long	c_haystack;
 	unsigned long	c_needle;
