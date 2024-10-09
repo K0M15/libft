@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:30:17 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/08 17:35:36 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/09 16:31:03 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 
-/*	ft_str_crtl.c	*/
+/*	ft_str_crtl.c		*/
 unsigned long	ft_strlen(const char *c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
@@ -48,7 +48,7 @@ void			*ft_memset(void *s, int c, unsigned long n);
 void			*ft_memcpy(void *dest, const void *src, unsigned long n);
 void			*ft_memmove(void *dest, const void *src, unsigned long n);
 
-/*	ft_calloc.c		*/
+/*	ft_calloc.c			*/
 void			*ft_calloc(unsigned int count, unsigned int size);
 
 /*	ft_str_new.c		*/
@@ -56,19 +56,21 @@ char			*ft_strdup(const char *s1);
 char			*ft_substr(char const *s, unsigned int start,
 					unsigned int len);
 char			*ft_strjoin(char const *s1, char const *s2);
+/*	ft_strtrim.c 		*/
 char			*ft_strtrim(char const *s1, char const *set);
+/*	ft_split.c			*/
 char			**ft_split(char const *s, char c);
-/*	ft_cnv_numbers.c		*/
+/*	ft_cnv_numbers.c	*/
 char			*ft_itoa(int n);
-int				ft_atoi(void);
+int				ft_atoi(const char *str);
 
-/*	ft_iter.c		*/
+/*	ft_iter.c			*/
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 void			ft_bzero(void *s, unsigned int length);
 
 
-/*	ft_put_fd.c		*/
+/*	ft_put_fd.c			*/
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);

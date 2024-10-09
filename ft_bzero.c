@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:06:14 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/09 15:06:14 by afelger          ###   ########.fr       */
+/*   Created: 2024/10/09 16:09:33 by afelger           #+#    #+#             */
+/*   Updated: 2024/10/09 16:12:40 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdlib.h"
 
-void *ft_calloc(unsigned int count, unsigned int size)
+void ft_bzero(void *s, unsigned int length)
 {
-	char *data = malloc(count*size);
-	if(data == NULL)
-		return NULL;
-	ft_memset(data, 0, count*size);
-	return data;
+	unsigned long c;
+
+	c = 0;
+	while (c < length)
+	{
+		((char *)s)[c] = 0;
+	}
 }

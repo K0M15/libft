@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_new.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/09 15:06:01 by afelger           #+#    #+#             */
+/*   Updated: 2024/10/09 15:06:04 by afelger          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
@@ -42,14 +53,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(result, s1, s1len);
 	ft_strlcpy(&result[s1len], s2, s2len+1);
 	return result;
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-
-}
-
-char	**ft_split(char const *s, char c)
-{
-
 }

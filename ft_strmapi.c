@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:06:14 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/09 15:06:14 by afelger          ###   ########.fr       */
+/*   Created: 2024/10/09 15:55:39 by afelger           #+#    #+#             */
+/*   Updated: 2024/10/09 16:08:57 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdlib.h"
 
-void *ft_calloc(unsigned int count, unsigned int size)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char *data = malloc(count*size);
-	if(data == NULL)
-		return NULL;
-	ft_memset(data, 0, count*size);
-	return data;
+	char *result;
+	unsigned long count;
+
+	result = calloc(ft_strlen(s), 1);
+	while(s[count])
+	{
+		result[count] = f(count, s[count]);
+		count++;
+	}
+	return result;
 }
