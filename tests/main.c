@@ -1,20 +1,20 @@
 #include "../libft.h"
 
-void	check_isalpha();
-void	check_isdigit();
-void	check_isalnum();
-void	check_isascii();
-void	check_isprint();
+void	check_ft_isalpha();
+void	check_ft_isdigit();
+void	check_ft_isalnum();
+void	check_ft_isascii();
+void	check_ft_isprint();
 
-void	check_toupper();
+void	check_ft_toupper();
 
 int main()
 {
-	check_isalpha();
-	check_isdigit();
-	check_isalnum();
-	check_isascii();
-	check_isprint();
+	check_ft_isalpha();
+	check_ft_isdigit();
+	check_ft_isalnum();
+	check_ft_isascii();
+	check_ft_isprint();
 
-	check_toupper();
+	check_ft_toupper();
 }
