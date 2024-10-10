@@ -25,118 +25,118 @@ static void iter_charset(t_charset chset, int *expect, int (*f)(int))
 	}
 }
 
-void	check_isalpha()
+void	check_ft_isalpha()
 {
 	int ex_lower[] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_upper[] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_digits[] = {0,0,0,0,0,0,0,0,0,0};
 	int ex_special[] = {0,0,0,0,0,0,0,0};
 	int ex_nonprint[4] = { 0 };
-	printf("\nCheck isalpha\n");
+	printf("\nCheck ft_isalpha\n");
 	printf("Check letter_lower\n");
-	iter_charset(letters_lower, ex_lower, isalpha);
+	iter_charset(letters_lower, ex_lower, ft_isalpha);
 	printf("Check letter_upper\n");
-	iter_charset(letters_upper, ex_upper, isalpha);
+	iter_charset(letters_upper, ex_upper, ft_isalpha);
 	printf("Check letter_digits\n");
-	iter_charset(digits, ex_digits, isalpha);
+	iter_charset(digits, ex_digits, ft_isalpha);
 	printf("Check letter_special\n");
-	iter_charset(special_chars, ex_special, isalpha);
+	iter_charset(special_chars, ex_special, ft_isalpha);
 	printf("Check letter_nonprint\n");
-	iter_charset(non_printable, ex_nonprint, isalpha);
-	assert(isalpha(200) == 0);
-	assert(isalpha(254) == 0);
-	assert(isalpha(128) == 0);
-	assert(isalpha(150) == 0);
+	iter_charset(non_printable, ex_nonprint, ft_isalpha);
+	assert(ft_isalpha(200) == 0);
+	assert(ft_isalpha(254) == 0);
+	assert(ft_isalpha(128) == 0);
+	assert(ft_isalpha(150) == 0);
 }
-void	check_isdigit()
+void	check_ft_isdigit()
 {
 	int ex_lower[26] = {0};
 	int ex_upper[26] = {0};
 	int ex_digits[10] = { 1,1,1,1,1,1,1,1,1,1 };
 	int ex_special[9] = { 0 };
 	int ex_nonprint[4] = { 0 };
-	printf("\nCheck isdigit\n");
+	printf("\nCheck ft_isdigit\n");
 	printf("Check letter_lower\n");
-	iter_charset(letters_lower, ex_lower, isdigit);
+	iter_charset(letters_lower, ex_lower, ft_isdigit);
 	printf("Check letter_upper\n");
-	iter_charset(letters_upper, ex_upper, isdigit);
+	iter_charset(letters_upper, ex_upper, ft_isdigit);
 	printf("Check letter_digits\n");
-	iter_charset(digits, ex_digits, isdigit);
+	iter_charset(digits, ex_digits, ft_isdigit);
 	printf("Check letter_special\n");
-	iter_charset(special_chars, ex_special, isdigit);
+	iter_charset(special_chars, ex_special, ft_isdigit);
 	printf("Check letter_nonprint\n");
-	iter_charset(non_printable, ex_nonprint, isdigit);
-	assert(isdigit(200) == 0);
-	assert(isdigit(254) == 0);
-	assert(isdigit(128) == 0);
-	assert(isdigit(150) == 0);
+	iter_charset(non_printable, ex_nonprint, ft_isdigit);
+	assert(ft_isdigit(200) == 0);
+	assert(ft_isdigit(254) == 0);
+	assert(ft_isdigit(128) == 0);
+	assert(ft_isdigit(150) == 0);
 }
-void	check_isalnum()
+void	check_ft_isalnum()
 {
 	int ex_lower[26] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_upper[26] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_digits[10] = {1,1,1,1,1,1,1,1,1,1};
 	int ex_special[9] = { 0 };
 	int ex_nonprint[4] = { 0 };
-	printf("\nCheck isalnum\n");
+	printf("\nCheck ft_isalnum\n");
 	printf("Check letter_lower\n");
-	iter_charset(letters_lower, ex_lower, isalnum);
+	iter_charset(letters_lower, ex_lower, ft_isalnum);
 	printf("Check letter_upper\n");
-	iter_charset(letters_upper, ex_upper, isalnum);
+	iter_charset(letters_upper, ex_upper, ft_isalnum);
 	printf("Check letter_digits\n");
-	iter_charset(digits, ex_digits, isalnum);
+	iter_charset(digits, ex_digits, ft_isalnum);
 	printf("Check letter_special\n");
-	iter_charset(special_chars, ex_special, isalnum);
+	iter_charset(special_chars, ex_special, ft_isalnum);
 	printf("Check letter_nonprint\n");
-	iter_charset(non_printable, ex_nonprint, isalnum);
-	assert(isalnum(200) == 0);
-	assert(isalnum(254) == 0);
-	assert(isalnum(128) == 0);
-	assert(isalnum(150) == 0);
+	iter_charset(non_printable, ex_nonprint, ft_isalnum);
+	assert(ft_isalnum(200) == 0);
+	assert(ft_isalnum(254) == 0);
+	assert(ft_isalnum(128) == 0);
+	assert(ft_isalnum(150) == 0);
 }
-void	check_isascii()
+void	check_ft_isascii()
 {
 	int ex_lower[26] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_upper[26] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_digits[10] = {1,1,1,1,1,1,1,1,1,1};
 	int ex_special[9] = {1,1,1,1,1,1,1,1,1};
 	int ex_nonprint[4] = {1,1,1,1};
-	printf("\nCheck isascii\n");
+	printf("\nCheck ft_isascii\n");
 	printf("Check letter_lower\n");
-	iter_charset(letters_lower, ex_lower, isascii);
+	iter_charset(letters_lower, ex_lower, ft_isascii);
 	printf("Check letter_upper\n");
-	iter_charset(letters_upper, ex_upper, isascii);
+	iter_charset(letters_upper, ex_upper, ft_isascii);
 	printf("Check letter_digits\n");
-	iter_charset(digits, ex_digits, isascii);
+	iter_charset(digits, ex_digits, ft_isascii);
 	printf("Check letter_special\n");
-	iter_charset(special_chars, ex_special, isascii);
+	iter_charset(special_chars, ex_special, ft_isascii);
 	printf("Check letter_nonprint\n");
-	iter_charset(non_printable, ex_nonprint, isascii);
-	assert(isascii(200) == 0);
-	assert(isascii(254) == 0);
-	assert(isascii(128) == 0);
-	assert(isascii(150) == 0);
+	iter_charset(non_printable, ex_nonprint, ft_isascii);
+	assert(ft_isascii(200) == 0);
+	assert(ft_isascii(254) == 0);
+	assert(ft_isascii(128) == 0);
+	assert(ft_isascii(150) == 0);
 }
-void	check_isprint()
+void	check_ft_isprint()
 {
 	int ex_lower[26] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_upper[26] = {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
 	int ex_digits[10] = {1,1,1,1,1,1,1,1,1,1};
 	int ex_special[9] = {1,1,1,1,1,1,1,1,1};
 	int ex_nonprint[4] = {0};
-	printf("\nCheck isprint\n");
+	printf("\nCheck ft_isprint\n");
 	printf("Check letter_lower\n");
-	iter_charset(letters_lower, ex_lower, isprint);
+	iter_charset(letters_lower, ex_lower, ft_isprint);
 	printf("Check letter_upper\n");
-	iter_charset(letters_upper, ex_upper, isprint);
+	iter_charset(letters_upper, ex_upper, ft_isprint);
 	printf("Check letter_digits\n");
-	iter_charset(digits, ex_digits, isprint);
+	iter_charset(digits, ex_digits, ft_isprint);
 	printf("Check letter_special\n");
-	iter_charset(special_chars, ex_special, isprint);
+	iter_charset(special_chars, ex_special, ft_isprint);
 	printf("Check letter_nonprint\n");
-	iter_charset(non_printable, ex_nonprint, isprint);
-	assert(isprint(200) == 0);
-	assert(isprint(254) == 0);
-	assert(isprint(128) == 0);
-	assert(isprint(150) == 0);
+	iter_charset(non_printable, ex_nonprint, ft_isprint);
+	assert(ft_isprint(200) == 0);
+	assert(ft_isprint(254) == 0);
+	assert(ft_isprint(128) == 0);
+	assert(ft_isprint(150) == 0);
 }
