@@ -25,28 +25,28 @@ static void iter_charset(t_charset chset, int *expect, int (*f)(int))
 	}
 }
 
-void	check_toupper()
+void	check_ft_toupper()
 {
 	int exp_lower[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
 	int exp_digits[10] = {'1','2','3','4','5','6','7','8','9','0'};
-	printf("\nCheck toupper\n");
+	printf("\nCheck ft_toupper\n");
 	printf("Check letter_lower\n");
-	iter_charset(letters_lower, exp_lower, toupper);
+	iter_charset(letters_lower, exp_lower, ft_toupper);
 	printf("Check letter_upper\n");
-	iter_charset(letters_upper, exp_lower, toupper);
+	iter_charset(letters_upper, exp_lower, ft_toupper);
 	printf("Check digits\n");
-	iter_charset(digits, exp_digits, toupper);
+	iter_charset(digits, exp_digits, ft_toupper);
 }
 
-void	check_tolower()
+void	check_ft_tolower()
 {
 	int exp_lower[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 	int exp_digits[10] = {'1','2','3','4','5','6','7','8','9','0'};
-	printf("\nCheck tolower\n");
+	printf("\nCheck ft_tolower\n");
 	printf("Check letter_lower\n");
-	iter_charset(letters_lower, exp_lower, toupper);
+	iter_charset(letters_lower, exp_lower, ft_tolower);
 	printf("Check letter_upper\n");
-	iter_charset(letters_upper, exp_lower, toupper);
+	iter_charset(letters_upper, exp_lower, ft_tolower);
 	printf("Check digits\n");
-	iter_charset(digits, exp_digits, toupper);
+	iter_charset(digits, exp_digits, ft_tolower);
 }
