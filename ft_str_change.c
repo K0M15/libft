@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:21:02 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/08 17:36:36 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/09 16:52:42 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dsize)
 	unsigned long	dst_ctr;
 
 	src_ctr = 0;
-	dst_ctr = strlen(dst);
+	dst_ctr = ft_strlen(dst);
 	while (dst_ctr < dsize && src[src_ctr])
 	{
 		dst[dst_ctr] = src[src_ctr];

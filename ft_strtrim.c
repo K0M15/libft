@@ -6,14 +6,14 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:53:25 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/09 15:05:55 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/10 08:18:08 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
 
-static int charinset(char c, char *set)
+static int charinset(char c, const char *set)
 {
 	unsigned long scount;
 
@@ -24,12 +24,6 @@ static int charinset(char c, char *set)
 	return (0);
 }
 
-/**
- * abcdefghij
- * 0123456789
- * 
- * 
- */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned long	start;

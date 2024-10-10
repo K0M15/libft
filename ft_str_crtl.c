@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:22:08 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/08 17:38:10 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/09 16:53:12 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	unsigned long	counter;
 
-	counter = strlen(s);
+	counter = ft_strlen(s);
 	while (counter >= 0)
 	{
 		if (c == s[counter])
@@ -66,7 +66,7 @@ char	*ft_strnstr(const char *haystack, const char *needle)
 	unsigned long	c_needle;
 	unsigned long	needle_length;
 
-	needle_length = strlen(needle);
+	needle_length = ft_strlen(needle);
 	c_haystack = 0;
 	while (haystack[c_haystack])
 	{

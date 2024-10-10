@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:43:30 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/08 17:23:53 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/09 16:52:22 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_isdigit(int c)
 
 int	ft_isalnum(int c)
 {
-	if (isalpha(c) || isdigit(c))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
 	return (0);
 }

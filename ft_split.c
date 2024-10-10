@@ -6,14 +6,14 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:04:57 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/09 15:06:41 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/10 08:16:50 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
 
-static long count_starts(const char *s, char c)
+static unsigned long count_starts(const char *s, char c)
 {
 	unsigned long count;
 	unsigned long result;
@@ -28,7 +28,7 @@ static long count_starts(const char *s, char c)
 	return (result);
 }
 
-static char *get_current(char *s, char c)
+static char *get_current(const char *s, char c)
 {
 	char *result;
 	unsigned int count;
@@ -41,7 +41,7 @@ static char *get_current(char *s, char c)
 	return result;
 }
 
-static char *get_next(char *s, char c)
+static const char *get_next(const char *s, char c)
 {
 	unsigned int count;
 
@@ -50,18 +50,19 @@ static char *get_next(char *s, char c)
 		count++;
 	while(s[count] && s[count] == c)
 		count++;
-	return s[count];
+	return &s[count];
 }
 
 char	**ft_split(const char *s, char c)
 {
-	long elements;
+	unsigned long elements;
 	unsigned long count;
 	char **result;
 
 	//count single strings, copy to single strings, free copy, return
 	elements = count_starts(s, c);
 	result = calloc(elements, sizeof(char *));
+	count = 0;
 	while (count < elements)
 	{
 		result[count] = get_current(s, c);
