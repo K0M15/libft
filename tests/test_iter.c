@@ -29,7 +29,7 @@ void test_ft_strmapi(test_strmapi *vals)
 typedef struct 
 {
 	char *s;
-	char (*f)(unsigned int, char);
+	void (*f)(unsigned int, char);
 	char *expected;
 } test_striteri;
 
@@ -54,7 +54,7 @@ void test_bzero(void *s, unsigned int length)
 	char *s2 = strndup((char *)s, length);
 	bzero(s1, length);
 	ft_bzero(s2, length);
-	if(memcmp(s1, s2) != 0)
+	if(memcmp(s1, s2, length) != 0)
 	{
 		printf("Failed memcmp of bzero\n");
 		assert(0);

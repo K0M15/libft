@@ -8,7 +8,7 @@ void check_ft_str_crtl(char *str, char c, char *s2, int amount)
 {
 	if (strlen(str) != ft_strlen(str))
 	{
-		printf("Error with strlen, Exp: %d, Got: %d\n", strlen(str),ft_strlen(str));
+		printf("Error with strlen, Exp: %lu, Got: %lu\n", strlen(str),ft_strlen(str));
 		assert(0);
 	}
 	if(strcmp(strchr(str, c), ft_strchr(str, c)) != 0)
@@ -23,7 +23,7 @@ void check_ft_str_crtl(char *str, char c, char *s2, int amount)
 	{
 		printf("Error with strncmp , Exp:%d, Got %d\n", strncmp(str, s2, amount), ft_strncmp(str, s2, amount));
 	}
-	if(strcmp(strnstr(str, c, amount), ft_strnstr(str, c, amount)) != 0)
+	if(strcmp(strnstr(str, c, amount), ft_strnstr(str, &c, amount)) != 0)
 	{
 		printf("Error with strnstr , Exp:%s, Got %s\n", strnstr(str, c, amount), ft_strnstr(str, c, amount));
 	}

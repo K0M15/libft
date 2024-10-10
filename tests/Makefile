@@ -1,16 +1,14 @@
-NAME=test
 
-all: $(NAME)
+all:
+	cc *.c ../libft.a -Wall -Wextra -Werror -g -o out
 
 re: fclean all
 
 clean:
 
 fclean: clean
-	rm -f
+	rm -f out
 
-$(NAME):
-	cc *.c ../libft.a -Wall -Wextra -Werror -fno-builtin -g -o out
 
 run: re
 	./out

@@ -90,7 +90,7 @@ void test_ft_split(split_case *vals)
 	int count = 0;
 	while(vals[count].s)
 	{
-		char *res = ft_split(vals[count].s, vals[count].c);
+		char **res = ft_split(vals[count].s, vals[count].c);
 		if(strcmp(res, vals[count].expected) != 0)
 		{
 			printf("Failed split, got %s, expected %s$", res, vals[count].expected);

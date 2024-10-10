@@ -7,8 +7,8 @@ void test_memchr(const void *s, int c, unsigned long n)
 {
 	if(memchr(s, c, n) != ft_memchr(s,c,n))
 	{
-		printf("Error with memchr, expected: %d, Got %d\n", memchr(s, c, n), ft_memchr(s,c,n));
-		assert(0)
+		printf("Error with memchr, expected: %p, Got %p\n", memchr(s, c, n), ft_memchr(s,c,n));
+		assert(0);
 	}
 }
 void test_memcmp(const void *s1, const void *s2, unsigned long n)
@@ -23,7 +23,8 @@ void test_memset(void *s, int c, unsigned long n)
 {
 	if(memcmp(memset(s,c,n), ft_memset(s,c,n), n) != 0)
 	{
-		printf("Error with memchr, expected: %d, Got %d\n",memcmp(memset(s,c,n), ft_memcmp(memset(s,c,n));
+		//TODO: Work here!!
+		printf("Error with memchr, expected: %d, Got %d\n",memset(s,c,n), ft_memcmp(memset(s,c,n)));
 		assert(0);
 	}
 }
