@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:30:17 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/09 16:48:10 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/10 09:50:02 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ unsigned long	ft_strlen(const char *c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 unsigned long	ft_strncmp(const char *s1, const char *s2, unsigned long n);
-char			*ft_strnstr(const char *haystack, const char *needle);
+char			*ft_strnstr(const char *haystack, const char *needle, unsigned long n);
 
 /*	ft_str_change.c		*/
 unsigned long	ft_strlcpy(char *dst, const char *src, unsigned long dsize);
@@ -60,15 +60,16 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);
 /*	ft_split.c			*/
 char			**ft_split(char const *s, char c);
-/*	ft_cnv_numbers.c	*/
+/*	ft_itoa.c	*/
 char			*ft_itoa(int n);
+/*	ft_atoi.c	*/
 int				ft_atoi(const char *str);
-
-/*	ft_iter.c			*/
+/*	ft_mapi.c			*/
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+/*	ft_striteri.c			*/
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
+/*	ft_bzero.c			*/
 void			ft_bzero(void *s, unsigned int length);
-
 
 /*	ft_put_fd.c			*/
 void			ft_putchar_fd(char c, int fd);
