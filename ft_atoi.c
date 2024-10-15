@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:28:52 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 10:03:55 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 13:50:44 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,18 @@ int	ft_atoi(const char *str)
 	counter = 0;
 	sign = 1;
 	result = 0;
-	while (isSpace(str[counter]))
+	while (is_space(str[counter]))
 		counter++;
-	if (str[counter++] == '-')
-		sign *= -1;
+	if (str[counter] == '-' || str[counter] == '+')
+	{
+		sign *= (-2 * (str[counter] == '-') + 1);
+		counter++;
+	}
 	while (ft_isdigit(str[counter]))
 	{
 		result *= 10;
 		result += str[counter] - '0';
 		counter++;
 	}
-	return (result);
+	return (result * sign);
 }
