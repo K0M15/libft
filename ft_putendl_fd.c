@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:42:51 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 14:54:36 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 17:24:33 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
-	write(1, "\n", 1);
+	write(fd, "\n", 1);
 }

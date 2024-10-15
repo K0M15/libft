@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:06:23 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 07:07:57 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 17:46:13 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,25 +22,38 @@ static long	get_divisor(int n)
 	return (div);
 }
 
+static int	handle_zero(int n, char *result)
+{
+	if (n == 0)
+	{
+		result[0] = '0';
+		return (1);
+	}
+	return (0);
+}
+
 char	*ft_itoa(int n)
 {
 	long	divisor;
 	char	*result;
 	int		position;
+	long	data;
 
-	divisor = get_divisor(n);
 	position = 0;
+	data = n;
 	result = ft_calloc(12, 1);
-	if (result == 0)
-		return (0);
-	if (n > 0)
+	if (handle_zero(n, result))
+		return (result);
+	if (data < 0)
 	{
-		n *= -1;
+		data *= -1;
 		result[position++] = '-';
 	}
+	divisor = get_divisor(data);
 	while (divisor != 0)
 	{
-		result[position] = n / divisor + '0';
+		result[position] = data / divisor + '0';
+		data = data - data / divisor * divisor;
 		divisor /= 10;
 		position++;
 	}
