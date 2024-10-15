@@ -1,6 +1,6 @@
 .PHONY: all clean fclean re objects objects_bonus bonus norm
 
-NAME=ftlib
+NAME=libft
 FILES= ft_atoi.o \
 ft_bzero.o \
 ft_calloc.o \
@@ -47,7 +47,9 @@ CC=cc
 DEPS=libft.h
 
 
-all: $(FILES) pack
+all: $(NAME)
+
+$(NAME): $(FILES) pack
 
 clean:
 	rm -f $(FILES)
