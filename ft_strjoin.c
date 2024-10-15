@@ -1,42 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_new.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:06:01 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 10:09:40 by afelger          ###   ########.fr       */
+/*   Created: 2024/10/15 14:30:47 by afelger           #+#    #+#             */
+/*   Updated: 2024/10/15 14:36:02 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
-
-char	*ft_strdup(const char *s1)
-{
-	char			*result;
-	unsigned int	len;
-
-	len = ft_strlen(s1);
-	result = malloc(len + 1);
-	if (result == NULL)
-		return (NULL);
-	ft_strlcpy(result, s1, len + 1);
-	return (result);
-}
-
-char	*ft_substr(char const *s, unsigned int start, unsigned int len)
-{
-	char	*result;
-
-	result = malloc(len + 1);
-	if (result == NULL)
-		return (NULL);
-	ft_strlcpy(result, &s[start], len);
-	result[len] = 0;
-	return (result);
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

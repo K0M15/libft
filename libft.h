@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:30:17 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 09:04:03 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 14:26:09 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,15 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-/*	ft_check_char.c		*/
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
 
-/*	ft_convert_char.c 	*/
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 
-/*	ft_str_crtl.c		*/
 unsigned long	ft_strlen(const char *c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
@@ -38,11 +35,9 @@ unsigned long	ft_strncmp(const char *s1, const char *s2, unsigned long n);
 char			*ft_strnstr(const char *haystack, const char *needle,
 					unsigned long n);
 
-/*	ft_str_change.c		*/
 unsigned long	ft_strlcpy(char *dst, const char *src, unsigned long dsize);
 unsigned long	ft_strlcat(char *dst, const char *src, unsigned long dsize);
 
-/*	ft_mem_crtl.c		*/
 void			*ft_memchr(const void *s, int c, unsigned long n);
 int				ft_memcmp(const void *s1, const void *s2, unsigned long n);
 void			*ft_memset(void *s, int c, unsigned long n);
