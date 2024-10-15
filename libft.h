@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:30:17 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 14:26:09 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 15:31:43 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,30 +44,20 @@ void			*ft_memset(void *s, int c, unsigned long n);
 void			*ft_memcpy(void *dest, const void *src, unsigned long n);
 void			*ft_memmove(void *dest, const void *src, unsigned long n);
 
-/*	ft_calloc.c			*/
 void			*ft_calloc(unsigned int count, unsigned int size);
 
-/*	ft_str_new.c		*/
 char			*ft_strdup(const char *s1);
 char			*ft_substr(char const *s, unsigned int start,
 					unsigned int len);
 char			*ft_strjoin(char const *s1, char const *s2);
-/*	ft_strtrim.c 		*/
 char			*ft_strtrim(char const *s1, char const *set);
-/*	ft_split.c			*/
 char			**ft_split(char const *s, char c);
-/*	ft_itoa.c	*/
 char			*ft_itoa(int n);
-/*	ft_atoi.c	*/
 int				ft_atoi(const char *str);
-/*	ft_mapi.c			*/
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-/*	ft_striteri.c			*/
 void			ft_striteri(char *s, void (*f)(unsigned int, char*));
-/*	ft_bzero.c			*/
-void			ft_bzero(void *s, unsigned int length);
+void			ft_bzero(void *s, unsigned long length);
 
-/*	ft_put_fd.c			*/
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
