@@ -6,23 +6,23 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:04:57 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 07:04:39 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:11:28 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
 
-static unsigned long count_starts(const char *s, char c)
+static unsigned long	count_starts(const char *s, char c)
 {
-	unsigned long count;
-	unsigned long result;
+	unsigned long	count;
+	unsigned long	result;
 
 	count = 0;
 	result = 0;
 	while (s[count] && s[count + 1])
 	{
-		if (s[count] == c && s[count+1] != c && s[count+1])
+		if (s[count] == c && s[count + 1] != c && s[count + 1])
 			result++;
 	}
 	return (result);

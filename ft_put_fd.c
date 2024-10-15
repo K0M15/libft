@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:13:01 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 08:37:08 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:05:34 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	long	divisor;
 	char	result;
-	// int		position;
 
 	divisor = get_divisor(n);
-	// position = 0;
 	if (n > 0)
 	{
 		n *= -1;

@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:30:17 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/10 09:50:02 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 09:04:03 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ unsigned long	ft_strlen(const char *c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
 unsigned long	ft_strncmp(const char *s1, const char *s2, unsigned long n);
-char			*ft_strnstr(const char *haystack, const char *needle, unsigned long n);
+char			*ft_strnstr(const char *haystack, const char *needle,
+					unsigned long n);
 
 /*	ft_str_change.c		*/
 unsigned long	ft_strlcpy(char *dst, const char *src, unsigned long dsize);

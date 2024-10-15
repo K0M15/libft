@@ -6,20 +6,20 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 14:53:25 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/10 08:18:08 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:10:59 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "stdlib.h"
 
-static int charinset(char c, const char *set)
+static int	charinset(char c, const char *set)
 {
-	unsigned long scount;
+	unsigned long	scount;
 
 	scount = 0;
-	while(set[scount])
-		if(c == set[scount])
+	while (set[scount])
+		if (c == set[scount])
 			return (1);
 	return (0);
 }
@@ -38,6 +38,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	result = malloc(end - start + 2);
 	ft_strlcpy(result, &s1[start], end - start + 1);
-	result[end-start+1] = 0;
-	return result;	
+	result[end - start + 1] = 0;
+	return (result);
 }

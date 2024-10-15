@@ -6,13 +6,13 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:28:52 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 07:09:10 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:03:55 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	isSpace(char c)
+static int	is_space(char c)
 {
 	if (c == ' ' || c == '\t' || c == '\n'
 		|| c == '\v' || c == '\f' || c == '\r')

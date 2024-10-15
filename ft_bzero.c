@@ -6,15 +6,15 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:09:33 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/09 16:12:40 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 10:04:10 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, unsigned int length)
+void	ft_bzero(void *s, unsigned int length)
 {
-	unsigned long c;
+	unsigned long	c;
 
 	c = 0;
 	while (c < length)
