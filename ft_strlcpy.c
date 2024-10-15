@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:19:10 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 14:19:13 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 16:55:05 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ unsigned long	ft_strlcpy(char *dst, const char *src, unsigned long dsize)
 	unsigned long	counter;
 
 	counter = 0;
-	while (counter < dsize && src[counter])
+	while (counter + 1 < dsize && src[counter])
 	{
 		dst[counter] = src[counter];
 		counter++;
 	}
-	return (dsize);
+	if (dsize != 0)
+		dst[counter] = 0;
+	return (counter);
 }
