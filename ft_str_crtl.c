@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:22:08 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/09 16:53:12 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 09:01:14 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ char	*ft_strrchr(const char *s, int c)
 	unsigned long	counter;
 
 	counter = ft_strlen(s);
-	while (counter >= 0)
+	while (counter > 0)
 	{
-		if (c == s[counter])
-			return ((char *)&s[counter]);
+		if (c == s[counter - 1])
+			return ((char *)&s[counter - 1]);
 		counter--;
 	}
 	return (0);
@@ -60,7 +60,7 @@ unsigned long	ft_strncmp(const char *s1, const char *s2, unsigned long n)
 	return ((unsigned char) s1[counter] - (unsigned char) s2[counter]);
 }
 
-char	*ft_strnstr(const char *haystack, const char *needle)
+char	*ft_strnstr(const char *haystack, const char *needle, unsigned long n)
 {
 	unsigned long	c_haystack;
 	unsigned long	c_needle;
@@ -68,7 +68,7 @@ char	*ft_strnstr(const char *haystack, const char *needle)
 
 	needle_length = ft_strlen(needle);
 	c_haystack = 0;
-	while (haystack[c_haystack])
+	while (haystack[c_haystack] && c_haystack < n)
 	{
 		c_needle = 0;
 		while (needle[c_needle]
