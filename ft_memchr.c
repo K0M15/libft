@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:21:09 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 14:21:12 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 15:46:53 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	*ft_memchr(const void *s, int c, unsigned long n)
 	counter = 0;
 	while (counter < n)
 	{
-		counter++;
 		if (str[counter] == c2)
 			return (((void *)&str[counter]));
+		counter++;
 	}
 	return (0);
 }
