@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mem_crtl.c                                      :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:17:29 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 14:22:14 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/15 15:44:22 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,24 @@
 
 void	*ft_memmove(void *dest, const void *src, unsigned long n)
 {
-	while (--n + 1)
+	unsigned long	counter;
+
+	counter = 0;
+	if (dest < src)
 	{
-		((char *)dest)[n] = ((char *)src)[n];
+		while (counter < n)
+		{
+			((char *)dest)[counter] = ((char *)src)[counter];
+			counter++;
+		}
+	}
+	else
+	{
+		counter--;
+		while (counter > --n)
+		{
+			((char *)dest)[n] = ((char *)src)[n];
+		}
 	}
 	return (dest);
 }
