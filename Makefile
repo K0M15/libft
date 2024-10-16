@@ -37,7 +37,16 @@ ft_substr.o \
 ft_strjoin.o \
 ft_striteri.o \
 ft_strmapi.o \
-ft_strtrim.o
+ft_strtrim.o \
+ft_lstnew.o \
+ft_lstadd_front.o \
+ft_lstsize.o \
+ft_lstlast.o \
+ft_lstadd_back.o \
+ft_lstdelone.o \
+ft_lstclear.o \
+ft_lstiter.o \
+ft_lstmap.o
 
 SOURCE=$(FILES:.o=.c)
 
