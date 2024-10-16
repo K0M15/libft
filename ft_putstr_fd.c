@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:39:35 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 17:20:41 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/16 16:19:56 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_putstr_fd(char *s, int fd)
 
 	c = ft_strlen(s);
 	if (c == 0)
-		return;
+		return ;
 	write(fd, s, c);
 }
