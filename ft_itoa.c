@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:06:23 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 17:46:13 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/17 14:25:09 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_itoa(int n)
 	position = 0;
 	data = n;
 	result = ft_calloc(12, 1);
-	if (handle_zero(n, result))
+	if (handle_zero(n, result) || !result)
 		return (result);
 	if (data < 0)
 	{

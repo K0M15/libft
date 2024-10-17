@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 16:22:08 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/15 17:06:43 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/17 14:21:51 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, unsigned long n)
 
 	needle_length = ft_strlen(needle);
 	c_haystack = 0;
+	if (!needle_length)
+		return ((char *)haystack);
 	while (haystack[c_haystack] && c_haystack < n)
 	{
 		c_needle = 0;

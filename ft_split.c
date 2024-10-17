@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:04:57 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/16 16:20:13 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/17 15:10:33 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ static unsigned long	count_starts(const char *s, char c)
 
 	count = 0;
 	result = 0;
+	if (s[count] != c && s[count])
+	{
+		result++;
+		count++;
+	}
 	while (s[count])
 	{
 		if (s[count] == c && s[count + 1] != c && s[count + 1])
