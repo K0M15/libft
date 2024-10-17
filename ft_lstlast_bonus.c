@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 16:30:24 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/16 17:20:47 by afelger          ###   ########.fr       */
+/*   Created: 2024/10/16 16:33:11 by afelger           #+#    #+#             */
+/*   Updated: 2024/10/17 13:28:11 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_bonus.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		counter;
-	t_list	*elm;
-
-	counter = 0;
-	elm = lst;
-	while (elm)
-	{
-		counter++;
-		elm = elm->next;
-	}
-	return (counter);
+	if (lst == 0)
+		return (0);
+	while (lst->next != 0)
+		lst = lst->next;
+	return (lst);
 }

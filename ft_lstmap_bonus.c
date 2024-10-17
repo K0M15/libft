@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/16 16:33:11 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/16 17:37:48 by afelger          ###   ########.fr       */
+/*   Created: 2024/10/16 16:56:52 by afelger           #+#    #+#             */
+/*   Updated: 2024/10/17 13:28:09 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "stdlib.h"
+#include "libft_bonus.h"
+#include <stdlib.h>
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
+	t_list	*result;
+	t_list	*current;
+
 	if (lst == NULL)
 		return (NULL);
-	while (lst->next != NULL)
+	result = ft_lstnew(f(lst->content));
+	if (!result)
+		return (NULL);
+	lst = lst->next;
+	while (lst)
+	{
+		current = ft_lstnew(f(lst->content));
+		if (!current)
+		{
+			ft_lstclear(&result, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&result, current);
 		lst = lst->next;
-	return (lst);
+	}
+	return (result);
 }
