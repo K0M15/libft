@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:06:23 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/17 14:25:09 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/18 16:52:21 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,26 @@ static int	handle_zero(int n, char *result)
 	return (0);
 }
 
+static unsigned int	get_number_len(int n)
+{
+	unsigned int r;
+	unsigned int div;
+
+	r = 1;
+	div = 1;
+	if (n < 0)
+	{
+		n *= -1;
+		r++;
+	}
+	while (n / div > 9)
+	{
+		r++;
+		div *= 10;
+	}
+	return (r);
+}
+
 char	*ft_itoa(int n)
 {
 	long	divisor;
@@ -41,7 +61,7 @@ char	*ft_itoa(int n)
 
 	position = 0;
 	data = n;
-	result = ft_calloc(12, 1);
+	result = ft_calloc(get_number_len(n) + 1, 1);
 	if (handle_zero(n, result) || !result)
 		return (result);
 	if (data < 0)
