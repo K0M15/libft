@@ -74,7 +74,7 @@ re: fclean all
 	$(CC) $(CFLAGS) -c -o $@ $^
 
 bonus: $(FILES) $(BONUS_FILES) $(NAME)
-	ar -crs $(NAME) $(FILES) $(bonus)
+	ar -crs $(NAME) $(FILES) $(BONUS_FILES)
 
 norm:
 	norminette $(SOURCE)

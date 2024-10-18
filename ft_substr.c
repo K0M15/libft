@@ -6,12 +6,12 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:30:36 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/17 16:19:50 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/18 16:59:15 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, unsigned int len)
 {

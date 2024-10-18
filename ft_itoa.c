@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:06:23 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/18 16:52:21 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/18 21:03:44 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ static int	handle_zero(int n, char *result)
 
 static unsigned int	get_number_len(int n)
 {
-	unsigned int r;
-	unsigned int div;
+	unsigned int	r;
+	unsigned int	div;
 
 	r = 1;
 	div = 1;
@@ -52,6 +52,14 @@ static unsigned int	get_number_len(int n)
 	return (r);
 }
 
+static void loop(char *result, long *data, long *divisor, int *position)
+{
+	result[*position] = *data / *divisor + '0';
+	*data = *data - *data / *divisor * *divisor;
+	*divisor /= 10;
+	(*position)++;
+}
+
 char	*ft_itoa(int n)
 {
 	long	divisor;
@@ -62,7 +70,9 @@ char	*ft_itoa(int n)
 	position = 0;
 	data = n;
 	result = ft_calloc(get_number_len(n) + 1, 1);
-	if (handle_zero(n, result) || !result)
+	if (!result)
+		return (result);
+	if (handle_zero(n, result))
 		return (result);
 	if (data < 0)
 	{
@@ -71,11 +81,15 @@ char	*ft_itoa(int n)
 	}
 	divisor = get_divisor(data);
 	while (divisor != 0)
-	{
-		result[position] = data / divisor + '0';
-		data = data - data / divisor * divisor;
-		divisor /= 10;
-		position++;
-	}
+		loop(result, &data, &divisor, &position);
 	return (result);
 }
+
+// #include <libc.h>
+
+// int main()
+// {
+// 	printf("%s /",ft_itoa(0));
+// 	// printf("%s /",ft_itoa(214748364778484));
+// 	printf("%s\n",ft_itoa(-2147483648));
+// }

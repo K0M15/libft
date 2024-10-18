@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:42:38 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/17 13:27:20 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/18 17:16:19 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (elem)
 	{
 		buff = elem;
+		del(elem->content);
 		elem = elem->next;
-		del(buff->content);
 		free(buff);
 	}
 	*lst = NULL;

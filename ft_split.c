@@ -6,12 +6,12 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:04:57 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/17 15:10:33 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/18 17:33:58 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 static unsigned long	count_starts(const char *s, char c)
 {
@@ -44,7 +44,7 @@ static char	*get_current(const char *s, char c)
 	count = 0;
 	while (s[count] && s[count] != c)
 		count++;
-	result = ft_calloc(count + 1, 1);
+	result = ft_calloc(count + 1, sizeof(char));
 	if (result == NULL)
 		return (NULL);
 	ft_strlcpy(result, s, count + 1);
@@ -72,6 +72,7 @@ static void	cleanup(char **result, int amount)
 		free(result[amount]);
 		amount--;
 	}
+	free(result[amount]);
 	free(result);
 }
 
@@ -82,8 +83,6 @@ char	**ft_split(const char *s, char c)
 	char			**result;
 
 	elements = count_starts(s, c) + 1;
-	if (s[ft_strlen(s) - 1] != c && ft_strlen(s))
-		elements++;
 	result = ft_calloc(elements, sizeof(char *));
 	if (result == NULL)
 		return (NULL);
@@ -91,9 +90,9 @@ char	**ft_split(const char *s, char c)
 	while (count < elements - 1)
 	{
 		result[count] = get_current(s, c);
-		if (result == NULL)
+		if (result[count] == NULL)
 		{
-			cleanup(result, count - 1);
+			cleanup(result, count);
 			return (NULL);
 		}
 		s = get_next(s, c);
@@ -103,3 +102,15 @@ char	**ft_split(const char *s, char c)
 	}
 	return (result);
 }
+
+// #include <libc.h>
+
+// int main()
+// {
+// 	char **tst = ft_split("hello!",' ');
+// 	while(*tst)
+// 	{
+// 		printf("%s", *tst);
+// 		tst++;
+// 	}
+// }
