@@ -51,7 +51,7 @@ ft_lstmap_bonus.o
 
 SOURCE=$(FILES:.o=.c)
 
-CFLAGS=-Wall -Wextra -Werror -g
+CFLAGS=-Wall -Wextra -Werror
 CC=cc
 DEPS=libft.h
 
