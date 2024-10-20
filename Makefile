@@ -50,6 +50,7 @@ ft_lstiter_bonus.o \
 ft_lstmap_bonus.o
 
 SOURCE=$(FILES:.o=.c)
+BONUS_SOURCE=$(BONUS_FILES:.o=.c)
 
 CFLAGS=-Wall -Wextra -Werror
 CC=cc
@@ -76,4 +77,4 @@ bonus: $(FILES) $(BONUS_FILES) $(NAME)
 	ar -crs $(NAME) $(FILES) $(BONUS_FILES)
 
 norm:
-	norminette $(SOURCE)
+	norminette $(SOURCE) $(BONUS_SOURCE)
