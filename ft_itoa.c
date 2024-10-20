@@ -6,7 +6,7 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 15:06:23 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/18 21:03:44 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/20 10:27:43 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static unsigned int	get_number_len(int n)
 	return (r);
 }
 
-static void loop(char *result, long *data, long *divisor, int *position)
+static void	loop(char *result, long *data, long *divisor, int *position)
 {
 	result[*position] = *data / *divisor + '0';
 	*data = *data - *data / *divisor * *divisor;

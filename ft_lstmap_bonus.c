@@ -6,21 +6,22 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:56:52 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/18 21:31:05 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/20 10:35:12 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
 #include <stdlib.h>
 
-static t_list *lst_new_del(void *cnt, void *(*f)(void *))
+static t_list	*lst_new_del(void *cnt, void *(*f)(void *))
 {
-	t_list *new;
+	t_list	*new;
+
 	new = ft_lstnew(NULL);
-	if(new == NULL)
+	if (new == NULL)
 		return (NULL);
 	new->content = f(cnt);
-	return new;
+	return (new);
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
@@ -36,7 +37,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	lst = lst->next;
 	while (lst)
 	{
-		current = ft_lstnew(f(lst->content));
+		current = lst_new_del(lst->content, f);
 		ft_lstadd_back(&result, current);
 		lst = lst->next;
 		if (current == NULL)
