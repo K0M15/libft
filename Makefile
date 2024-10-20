@@ -53,7 +53,6 @@ SOURCE=$(FILES:.o=.c)
 
 CFLAGS=-Wall -Wextra -Werror
 CC=cc
-DEPS=libft.h
 
 
 all: $(NAME)
