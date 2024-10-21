@@ -6,11 +6,11 @@
 /*   By: afelger <afelger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 16:56:52 by afelger           #+#    #+#             */
-/*   Updated: 2024/10/20 10:35:12 by afelger          ###   ########.fr       */
+/*   Updated: 2024/10/21 08:54:28 by afelger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
+#include "libft.h"
 #include <stdlib.h>
 
 static t_list	*lst_new_del(void *cnt, void *(*f)(void *))
